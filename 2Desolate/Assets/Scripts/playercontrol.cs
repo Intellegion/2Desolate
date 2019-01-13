@@ -23,7 +23,7 @@ public class playercontrol : MonoBehaviour
     void FixedUpdate()
     { 
         move = Input.GetAxis("Horizontal")*0.3f;
-        if(Input.GetKeyDown(KeyCode.UpArrow)&&isTouch)
+        if((Input.GetKeyDown(KeyCode.W)||Input.GetKeyDown(KeyCode.UpArrow))&&isTouch)
             rb.AddForce(jump);
         transform.Translate(move, 0.0f, 0.0f,Space.World);
         mt.position = new Vector3(transform.position.x, transform.position.y, 0.0f);
